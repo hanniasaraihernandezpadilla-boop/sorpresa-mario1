@@ -1,0 +1,1029 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4b163f 0%,
+            #21091f 45%,
+            #09030c 100%
+        );
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   PANTALLAS
+========================================== */
+
+.pantalla {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(95, 22, 75, 0.35),
+            rgba(5, 0, 10, 0.75)
+        );
+
+    z-index: 5;
+}
+
+.pantalla-activa {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.contenido {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 10;
+
+    animation:
+        aparecer 1.2s ease;
+
+}
+
+
+/* ==========================================
+   TEXTOS
+========================================== */
+
+.texto-superior {
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    color: #f8c9df;
+
+    margin-bottom: 20px;
+
+}
+
+.titulo-principal {
+
+    font-size:
+        clamp(55px, 12vw, 110px);
+
+    margin-bottom: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffb7d9,
+            #ffffff
+        );
+
+    background-size: 200% auto;
+
+    color: transparent;
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    animation:
+        brillo 4s linear infinite;
+
+}
+
+.subtitulo {
+
+    font-size:
+        clamp(30px, 6vw, 55px);
+
+    color: #ff91c5;
+
+    margin-bottom: 25px;
+
+}
+
+.titulo-seccion {
+
+    font-size:
+        clamp(35px, 7vw, 65px);
+
+    color: #ffb0d3;
+
+    margin-bottom: 30px;
+
+}
+
+.texto {
+
+    max-width: 650px;
+
+    margin:
+        0 auto 30px;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #f8dfeb;
+
+}
+
+.texto-destacado {
+
+    max-width: 650px;
+
+    margin:
+        20px auto;
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #ffe5f1;
+
+}
+
+
+/* ==========================================
+   CORAZÓN
+========================================== */
+
+.corazon-grande {
+
+    font-size: 85px;
+
+    margin-bottom: 15px;
+
+    animation:
+        latido 1.4s infinite;
+
+}
+
+.corazon-separador {
+
+    font-size: 40px;
+
+    margin: 30px;
+
+    animation:
+        latido 1.4s infinite;
+
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn-principal {
+
+    border: none;
+
+    padding:
+        16px 30px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    color: white;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            45deg,
+            #e9367a,
+            #ff78b6
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 90, 170, 0.45);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.btn-principal:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 40px
+        rgba(255, 90, 170, 0.8);
+
+}
+
+
+/* ==========================================
+   FECHA
+========================================== */
+
+.fecha {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin:
+        30px auto;
+
+    color: #ffd5e8;
+
+}
+
+.fecha span {
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+}
+
+.fecha small {
+
+    font-size: 18px;
+
+    color: #ff8fbe;
+
+}
+
+
+/* ==========================================
+   CONTADOR
+========================================== */
+
+.contador {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    max-width: 650px;
+
+    margin:
+        35px auto;
+
+}
+
+.tiempo {
+
+    padding: 20px 10px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid
+        rgba(255, 170, 210, 0.2);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+.tiempo span {
+
+    display: block;
+
+    font-size:
+        clamp(30px, 6vw, 50px);
+
+    color: #ff9fc9;
+
+    font-weight: bold;
+
+}
+
+.tiempo small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #f8dce9;
+
+}
+
+
+/* ==========================================
+   FOTOS
+========================================== */
+
+.pantalla-scroll {
+
+    overflow-y: auto;
+
+    align-items: flex-start;
+
+}
+
+.contenido-fotos {
+
+    padding:
+        50px 0;
+
+}
+
+.recuerdo {
+
+    margin:
+        45px auto;
+
+    max-width: 450px;
+
+}
+
+.marco-foto {
+
+    padding: 12px;
+
+    background: #fff;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.45);
+
+    transform:
+        rotate(-2deg);
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+.recuerdo:nth-child(even)
+.marco-foto {
+
+    transform:
+        rotate(2deg);
+
+}
+
+.marco-foto:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.03);
+
+}
+
+.marco-foto img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+}
+
+.recuerdo p {
+
+    margin-top: 18px;
+
+    font-size: 19px;
+
+    color: #fbdce9;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   FRASE
+========================================== */
+
+.comillas {
+
+    font-size: 100px;
+
+    height: 80px;
+
+    color: #ff82b8;
+
+}
+
+.frase {
+
+    max-width: 750px;
+
+    margin:
+        20px auto;
+
+    font-size:
+        clamp(30px, 6vw, 55px);
+
+    line-height: 1.4;
+
+    font-style: italic;
+
+    color: #fff1f7;
+
+}
+
+
+/* ==========================================
+   CARTA
+========================================== */
+
+.sobre {
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation:
+        flotando 3s infinite;
+
+}
+
+.texto-carta {
+
+    max-width: 700px;
+
+    margin:
+        0 auto 18px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #f7dce8;
+
+}
+
+.firma {
+
+    margin-top: 30px;
+
+    font-size: 23px;
+
+    line-height: 1.7;
+
+    color: #ff9ec8;
+
+}
+
+
+/* ==========================================
+   FINAL
+========================================== */
+
+.pastel {
+
+    font-size: 100px;
+
+    margin-bottom: 20px;
+
+    animation:
+        latido 1.3s infinite;
+
+}
+
+.mensaje-final {
+
+    margin-top: 30px;
+
+    font-size: 42px;
+
+    color: #ff9fc9;
+
+    animation:
+        latido 1.5s infinite;
+
+}
+
+.firma-final {
+
+    margin-top: 20px;
+
+    font-size: 25px;
+
+    color: #ffd6e7;
+
+}
+
+
+/* ==========================================
+   BOTÓN MÚSICA
+========================================== */
+
+.btn-musica {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255,255,255,0.2);
+
+    background:
+        rgba(255,255,255,0.1);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+/* ==========================================
+   CORAZONES
+========================================== */
+
+.corazon {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    animation:
+        subir linear forwards;
+
+}
+
+
+/* ==========================================
+   ESTRELLAS
+========================================== */
+
+.estrella {
+
+    position: fixed;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0.5;
+
+    animation:
+        parpadear 2s
+        ease-in-out
+        infinite alternate;
+
+    z-index: 1;
+
+}
+
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.12);
+
+    }
+
+}
+
+
+@keyframes brillo {
+
+    0% {
+
+        background-position:
+            0% center;
+
+    }
+
+    100% {
+
+        background-position:
+            200% center;
+
+    }
+
+}
+
+
+@keyframes flotando {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+@keyframes subir {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes parpadear {
+
+    from {
+
+        opacity: 0.2;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+    .pantalla {
+
+        padding:
+            25px 18px;
+
+    }
+
+    .texto {
+
+        font-size: 17px;
+
+    }
+
+    .texto-destacado {
+
+        font-size: 18px;
+
+    }
+
+    .texto-superior {
+
+        font-size: 14px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .contador {
+
+        gap: 8px;
+
+    }
+
+    .tiempo {
+
+        padding:
+            15px 5px;
+
+    }
+
+    .tiempo span {
+
+        font-size: 28px;
+
+    }
+
+    .tiempo small {
+
+        font-size: 9px;
+
+    }
+
+    .marco-foto img {
+
+        height: 260px;
+
+    }
+
+    .texto-carta {
+
+        font-size: 16px;
+
+    }
+
+    .mensaje-final {
+
+        font-size: 30px;
+
+    }
+
+}
+
+/* ==========================================
+   🎵 NUESTRA CANCIÓN
+========================================== */
+
+.cancion-container {
+
+    max-width: 500px;
+
+    margin:
+        40px auto;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid
+        rgba(255, 170, 210, 0.25);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
+
+    backdrop-filter:
+        blur(12px);
+
+    animation:
+        flotarCancion 4s ease-in-out infinite;
+
+}
+
+
+.cancion-corazon {
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+
+    animation:
+        latido 1.5s infinite;
+
+}
+
+
+.cancion-container h3 {
+
+    font-size: 27px;
+
+    color: #ffb0d3;
+
+    margin-bottom: 8px;
+
+}
+
+
+.cancion-titulo {
+
+    font-size: 21px;
+
+    color: white;
+
+    margin-bottom: 3px;
+
+}
+
+
+.cancion-artista {
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    color: #eab8cf;
+
+    margin-bottom: 20px;
+
+}
+
+
+.cancion-container iframe {
+
+    display: block;
+
+    width: 100%;
+
+    border-radius: 12px;
+
+    margin:
+        20px auto;
+
+}
+
+
+.cancion-mensaje {
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #f6dce8;
+
+    margin-top: 20px;
+
+}
+
+
+@keyframes flotarCancion {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cancion-container {
+
+        margin:
+            30px 5px;
+
+        padding: 18px;
+
+    }
+
+    .cancion-container h3 {
+
+        font-size: 24px;
+
+    }
+
+}
