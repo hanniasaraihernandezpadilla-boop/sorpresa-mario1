@@ -26,7 +26,7 @@ body {
 
     color: white;
 
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 
@@ -385,6 +385,13 @@ body {
 ========================================== */
 
 .pantalla-scroll {
+
+    overflow-y: auto;
+
+    align-items: flex-start;
+
+}
+.pantalla-carta {
 
     overflow-y: auto;
 
